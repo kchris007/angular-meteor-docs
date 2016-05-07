@@ -246,7 +246,7 @@ To avoid those errors - we need to add Typings for packages that aren't built wi
 
 > Angular2-Meteor and Angular 2 provides its own typings inside the NPM folder, and you do no need to install the typings from external sources.
 
-You will need to reference and let the TypeScript compiler know about external packages that in use - there are 2 ways of doing that:
+You will need to reference and let the TypeScript compiler know about external packages that in use - there are 3 ways of doing that:
 
  - One way is to directly reference typings files (`.d.ts` extension) using a special sugared syntax at the top of your TypeScript code file, for example:
 
@@ -255,7 +255,9 @@ You will need to reference and let the TypeScript compiler know about external p
         import {Component} from 'angular2/core';
         import {bootstrap} from 'angular2/platform/browser';
 
- - Another way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" (or "filesGlob") property set to include all required typings files.
+ - Second way is to create a custom [TypeScript configuration file](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json) with the "files" (or "filesGlob") property set to include all required typings files.
+ - Third way is to install correct version of angular and meteor packacges by running the following command.
+     $ meteor npm install --save meteor-node-stubs angular2
 
 This configuration file should be called `tsconfig.json` and placed at
 the app root folder.
